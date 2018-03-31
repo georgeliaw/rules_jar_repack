@@ -20,7 +20,7 @@ jar_repack allows us to repackage an existing jar to use a new class name (simil
 
 Example Usage:
 ```
-load("//build_tools/java:jar_repack.bzl", "jar_repack")
+load("@io_bazel_rules_java_extensions//java_extensions:jar_repack.bzl", "jar_repack")
 jar_repack(
     name = "jarjar-new",
     old_class_name = "org.pantsbuild.**",
@@ -40,7 +40,7 @@ Original form taken from https://github.com/bazelbuild/bazel/issues/1017#issueco
 
 Example Usage:
 ```
-load("//build_tools/java:junit_test.bzl", "junit_test")
+load("@io_bazel_rules_java_extensions//java_extensions:junit_test.bzl", "junit_test")
 junit_test(
     name = "tests",
     deps = [
