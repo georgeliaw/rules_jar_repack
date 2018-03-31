@@ -1,14 +1,3 @@
-# jar_repack allows us to repackage an existing jar to use a new class name
-# Example Usage:
-#
-# load("//build_tools/java:jar_repack.bzl", "jar_repack")
-# jar_repack(
-#     name = "jarjar-new",
-#     old_class_name = "org.pantsbuild.**",
-#     new_class_name = "com.example.test.@1",
-#     src_jar = "@org_pantsbuild_jarjar//jar"
-# )
-
 def _repack_impl(ctx):
     src_jar_path = "%s/%s" % (
         str(list(ctx.attr.src_jar.files)[0].root).replace('[source]', ''),

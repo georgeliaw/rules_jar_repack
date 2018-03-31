@@ -1,9 +1,3 @@
-# original form taken from https://github.com/bazelbuild/bazel/issues/1017#issuecomment-199326970
-
-# Generates a Junit4 TestSuite
-# Assumes srcs are all .java test files
-# Assumes junit4 is already added to deps
-
 _TEMPLATE = """import org.junit.runners.Suite;
 import org.junit.runner.RunWith;
 
