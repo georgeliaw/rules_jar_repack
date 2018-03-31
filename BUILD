@@ -6,7 +6,10 @@ load(
 )
 
 skylark_doc(
-    name = "wheel-docs",
-    srcs = ["//wheel:wheel.bzl"],
+    name = "docs",
+    srcs = [
+        "//java_extensions:jar_repack.bzl",
+        "//java_extensions:junit_test.bzl"
+    ],
     format = "markdown"
 )
