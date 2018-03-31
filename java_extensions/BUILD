@@ -1,3 +1,5 @@
+exports_files(["jar_repack.bzl", "junit_test.bzl"])
+
 package(default_visibility = ["//visibility:public"])
 
 # this binary allows us to re-package java libraries (i.e. what maven shading does). example below:
