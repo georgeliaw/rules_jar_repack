@@ -75,19 +75,19 @@ def jar_repack(name, old_class_name, new_class_name, src_jar):
 
 def jar_repack_repositories():
     """Rules to be invoked from WORKSPACE for remote dependencies."""
-    maven_jar(
+    native.maven_jar(
         name="org_pantsbuild_jarjar",
         artifact="org.pantsbuild:jarjar:1.6.4",
         sha1="bf1e30daf5d8bf737eba553ec8e08aeb4ec02fd2"
     )
 
-    maven_jar(
+    native.maven_jar(
         name="org_ow2_asm_asm",
         artifact="org.ow2.asm:asm:5.2",
         sha1="4ce3ecdc7115bcbf9d4ff4e6ec638e60760819df"
     )
 
-    maven_jar(
+    native.maven_jar(
         name="org_ow2_asm_asm_commons",
         artifact="org.ow2.asm:asm-commons:5.2",
         sha1="2f916f2c20f1d04404276cb1c2e6d5d6793dca3f"
