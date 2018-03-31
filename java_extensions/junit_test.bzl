@@ -48,3 +48,11 @@ def junit_test(name, srcs, **kwargs):
                      test_class=suite_name,
                      srcs = srcs + [":"+suite_name],
                      **kwargs)
+
+def junit_test_repositories():
+    """Rules to be invoked from WORKSPACE for remote dependencies."""
+    maven_jar(
+        name="junit_junit",
+        artifact="junit:junit:4.11",
+        sha1="4e031bb61df09069aeb2bffb4019e7a5034a4ee0"
+    )

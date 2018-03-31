@@ -1,6 +1,20 @@
 # rules_java_extensions
 Bazel macros to extend java functionality. Hopefully will be converting them to actual rules in the future.
 
+WORKSPACE:
+```
+http_archive(
+    name = "io_bazel_rules_java_extensions",
+    strip_prefix = "rules_java_extensions-<version>",
+    urls = ["https://github.com/georgeliaw/rules_java_extensions/archive/<version>.tar.gz"],
+    sha256 = "<checksum>"
+)
+load("@io_bazel_rules_java_extensions//java_extensions:jar_repack.bzl", "jar_repack_repositories")
+jar_repack_repositories()
+load("@io_bazel_rules_java_extensions//java_extensions:junit_test.bzl", "junit_test_repositories")
+junit_test_repositories()
+```
+
 ## jar_repack
 jar_repack allows us to repackage an existing jar to use a new class name (similar to maven shading).
 
@@ -26,6 +40,7 @@ Original form taken from https://github.com/bazelbuild/bazel/issues/1017#issueco
 
 Example Usage:
 ```
+load("//build_tools/java:junit_test.bzl", "junit_test")
 junit_test(
     name = "tests",
     deps = [
